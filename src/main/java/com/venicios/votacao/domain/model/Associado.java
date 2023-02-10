@@ -20,7 +20,7 @@ public class Associado {
     @Column(nullable = false)
     private String nome;
 
-    @Column(unique=true)
+    @Column(nullable = false)
     private String cpf;
 
 }
