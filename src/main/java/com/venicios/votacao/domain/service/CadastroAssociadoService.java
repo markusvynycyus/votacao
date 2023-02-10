@@ -1,9 +1,7 @@
 package com.venicios.votacao.domain.service;
 
 import com.venicios.votacao.domain.execption.AssociadoNaoEncontradoException;
-import com.venicios.votacao.domain.execption.PautaNaoEncontradoException;
 import com.venicios.votacao.domain.model.Associado;
-import com.venicios.votacao.domain.model.Pauta;
 import com.venicios.votacao.domain.repository.AssociadoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
