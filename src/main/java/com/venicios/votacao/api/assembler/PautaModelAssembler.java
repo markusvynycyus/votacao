@@ -1,6 +1,5 @@
 package com.venicios.votacao.api.assembler;
 
-
 import com.venicios.votacao.api.dto.PautaDTO;
 import com.venicios.votacao.domain.model.Pauta;
 import org.modelmapper.ModelMapper;
