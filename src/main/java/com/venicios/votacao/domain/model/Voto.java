@@ -19,9 +19,10 @@ public class Voto {
     private Associado associado;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name= "sessao_votacao_id", nullable = false)
     private SessaoVotacao sessaoVotacao;
 
+    @Column(nullable = false)
     private Boolean opcaoVoto;
 
 }

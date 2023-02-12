@@ -20,14 +20,12 @@ public class SessaoVotacao {
     private Long id;
 
     @CreationTimestamp
-    @Column(nullable = false)
     private OffsetDateTime dataAbertura;
 
     @CreationTimestamp
-    @Column(nullable = false)
     private OffsetDateTime dataFechamento;
 
-    @OneToMany
+    @OneToOne
     private Pauta pauta;
 
     @OneToMany(mappedBy = "sessaoVotacao")
