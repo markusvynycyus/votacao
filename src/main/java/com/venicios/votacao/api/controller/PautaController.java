@@ -1,6 +1,6 @@
 package com.venicios.votacao.api.controller;
 
-import com.venicios.votacao.api.assembler.PautaInputDissasembler;
+import com.venicios.votacao.api.assembler.PautaInputDisassembler;
 import com.venicios.votacao.api.assembler.PautaModelAssembler;
 import com.venicios.votacao.api.dto.PautaDTO;
 import com.venicios.votacao.api.dto.input.PautaInput;
@@ -28,7 +28,7 @@ public class PautaController {
     private CadastroPautaService cadastroPautaService;
 
     @Autowired
-    private PautaInputDissasembler pautaInputDissasembler;
+    private PautaInputDisassembler pautaInputDisassembler;
 
     @GetMapping
     public List<PautaDTO> listar(){
@@ -45,21 +45,22 @@ public class PautaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public PautaDTO adicionar(@RequestBody @Valid PautaInput pautaInput){
-        Pauta pauta = pautaInputDissasembler.toDomainObject(pautaInput);
+    public PautaDTO adicionar(@RequestBody @Valid PautaInput pautaInput) {
+        Pauta pauta = pautaInputDisassembler.toDomainObject(pautaInput);
 
-        pauta= cadastroPautaService.salvar(pauta);
+        pauta = cadastroPautaService.salvar(pauta);
 
         return pautaModelAssembler.toModel(pauta);
-
     }
+
+
 
     @PutMapping("/{pautaId}")
     public PautaDTO atualizar(@PathVariable Long pautaId,
                                  @RequestBody @Valid PautaInput pautaInput) {
         Pauta pautaAtual = cadastroPautaService.buscarOuFalhar(pautaId);
 
-        pautaInputDissasembler.copyToDomainObject(pautaInput, pautaAtual);
+        pautaInputDisassembler.copyToDomainObject(pautaInput, pautaAtual);
 
         pautaAtual = cadastroPautaService.salvar(pautaAtual);
 
