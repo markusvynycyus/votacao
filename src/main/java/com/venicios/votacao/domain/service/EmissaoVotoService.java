@@ -2,7 +2,6 @@ package com.venicios.votacao.domain.service;
 
 import com.venicios.votacao.domain.execption.VotoNaoEncontradoException;
 import com.venicios.votacao.domain.model.Associado;
-import com.venicios.votacao.domain.model.Pauta;
 import com.venicios.votacao.domain.model.SessaoVotacao;
 import com.venicios.votacao.domain.model.Voto;
 import com.venicios.votacao.domain.repository.VotoRepository;
@@ -22,7 +21,7 @@ public class EmissaoVotoService {
     @Autowired
     private CadastroAssociadoService  cadastroAssociadoService;
     @Transactional
-    public Voto salvarVoto(Voto voto){
+    public Voto validarVoto(Voto voto){
 
         Long associadoId = voto.getAssociado().getId();
         Associado associado = cadastroAssociadoService.buscarOuFalhar(associadoId);
@@ -35,7 +34,6 @@ public class EmissaoVotoService {
         return votoRepository.save(voto);
 
     }
-
 
     public Voto buscarOuFalhar(Long votoId) {
         return votoRepository.findById(votoId)

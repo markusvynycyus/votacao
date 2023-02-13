@@ -1,16 +1,19 @@
 package com.venicios.votacao.api.controller;
 
+import com.venicios.votacao.api.assembler.VotoInputDisassembler;
 import com.venicios.votacao.api.assembler.VotoModelAssembler;
 import com.venicios.votacao.api.dto.VotoDTO;
+import com.venicios.votacao.api.dto.input.VotoInput;
+import com.venicios.votacao.domain.execption.EntidadeNaoEncontradaException;
+import com.venicios.votacao.domain.execption.NegocioException;
 import com.venicios.votacao.domain.model.Voto;
 import com.venicios.votacao.domain.repository.VotoRepository;
 import com.venicios.votacao.domain.service.EmissaoVotoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -24,7 +27,10 @@ public class VotoController {
     private VotoModelAssembler votoModelAssembler;
 
     @Autowired
-    private EmissaoVotoService cadastroVotoService;
+    private VotoInputDisassembler votoInputDisassembler;
+
+    @Autowired
+    private EmissaoVotoService emissaoVotoService;
 
     @GetMapping
     public List<VotoDTO> listar(){
@@ -34,9 +40,23 @@ public class VotoController {
 
     @GetMapping("/{votoId}")
     public VotoDTO buscar(@PathVariable Long votoId){
-        Voto voto = cadastroVotoService.buscarOuFalhar(votoId);
+        Voto voto = emissaoVotoService.buscarOuFalhar(votoId);
         return votoModelAssembler.toModel(voto);
 
     }
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public VotoDTO adicionar (@Valid @RequestBody VotoInput votoInput){
+        try {
+            Voto novoVoto = votoInputDisassembler.toDomainObject(votoInput);
+
+            novoVoto = emissaoVotoService.validarVoto(novoVoto);
+
+            return votoModelAssembler.toModel(novoVoto);
+
+        } catch (EntidadeNaoEncontradaException e) {
+            throw new NegocioException(e.getMessage(), e);
+        }
+   }
 
 }
