@@ -15,7 +15,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(value= "/pautas")
+@RequestMapping(path= "/pautas")
 public class PautaController {
 
     @Autowired
@@ -52,7 +52,6 @@ public class PautaController {
 
         return pautaModelAssembler.toModel(pauta);
     }
-
 
 
     @PutMapping("/{pautaId}")

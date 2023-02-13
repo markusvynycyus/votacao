@@ -1,15 +1,10 @@
 package com.venicios.votacao.api.controller;
 
 import com.venicios.votacao.api.assembler.SessaoVotacaoModelAssembler;
-import com.venicios.votacao.api.assembler.VotoModelAssembler;
 import com.venicios.votacao.api.dto.SessaoVotacaoDTO;
-import com.venicios.votacao.api.dto.VotoDTO;
 import com.venicios.votacao.domain.model.SessaoVotacao;
-import com.venicios.votacao.domain.model.Voto;
 import com.venicios.votacao.domain.repository.SessaoVotacaoRepository;
-import com.venicios.votacao.domain.repository.VotoRepository;
 import com.venicios.votacao.domain.service.CadastroSessaoVotacaoService;
-import com.venicios.votacao.domain.service.CadastroVotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

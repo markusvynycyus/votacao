@@ -25,4 +25,6 @@ public class Voto {
     @Column(nullable = false)
     private Boolean opcaoVoto;
 
+
+
 }

@@ -4,7 +4,7 @@ import com.venicios.votacao.api.assembler.VotoModelAssembler;
 import com.venicios.votacao.api.dto.VotoDTO;
 import com.venicios.votacao.domain.model.Voto;
 import com.venicios.votacao.domain.repository.VotoRepository;
-import com.venicios.votacao.domain.service.CadastroVotoService;
+import com.venicios.votacao.domain.service.EmissaoVotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +24,7 @@ public class VotoController {
     private VotoModelAssembler votoModelAssembler;
 
     @Autowired
-    private CadastroVotoService cadastroVotoService;
+    private EmissaoVotoService cadastroVotoService;
 
     @GetMapping
     public List<VotoDTO> listar(){
