@@ -25,6 +25,10 @@ public class SessaoVotacao { // alterando Sessão
     @CreationTimestamp
     private OffsetDateTime dataFechamento;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Resultado resultado;
+
     @ManyToOne
     @JoinColumn(name = "pauta_id", nullable = false)
     private Pauta pauta;
@@ -32,7 +36,6 @@ public class SessaoVotacao { // alterando Sessão
 
     @OneToMany(mappedBy = "sessaoVotacao")
     private List<Voto> votos = new ArrayList<>();
-
 
 
 
