@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.time.LocalDateTime;
+
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
@@ -18,13 +20,14 @@ public class Voto {
     @JoinColumn(name = "associado_id", nullable = false)
     private Associado associado;
 
-    @ManyToOne
-    @JoinColumn(name= "sessao_votacao_id", nullable = false)
-    private SessaoVotacao sessaoVotacao;
+        @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private OpcaoVoto opcaoVoto;
 
     @Column(nullable = false)
-    private Boolean opcaoVoto;
+    private LocalDateTime dataVoto;
 
-
-
+    @ManyToOne
+    @JoinColumn(name = "sessao_votacao_id", nullable = false)
+    private SessaoVotacao sessaoVotacao;
 }

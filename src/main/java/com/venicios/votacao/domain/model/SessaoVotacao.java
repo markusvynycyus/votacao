@@ -25,8 +25,10 @@ public class SessaoVotacao {
     @CreationTimestamp
     private OffsetDateTime dataFechamento;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "pauta_id", nullable = false)
     private Pauta pauta;
+
 
     @OneToMany(mappedBy = "sessaoVotacao")
     private List<Voto> votos = new ArrayList<>();
