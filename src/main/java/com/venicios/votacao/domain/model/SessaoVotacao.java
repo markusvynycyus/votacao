@@ -12,7 +12,7 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class SessaoVotacao {
+public class SessaoVotacao { // alterando Sessão
 
     @EqualsAndHashCode.Include
     @Id

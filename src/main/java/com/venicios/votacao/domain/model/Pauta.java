@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Pauta {
+public class Pauta { // alterando Pauta
 
     @EqualsAndHashCode.Include
     @Id

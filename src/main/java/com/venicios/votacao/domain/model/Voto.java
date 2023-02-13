@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-public class Voto {
+public class Voto {// alerando Voto
 
     @EqualsAndHashCode.Include
     @Id
