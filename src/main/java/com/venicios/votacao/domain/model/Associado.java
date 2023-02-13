@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -21,5 +22,10 @@ public class Associado {
 
     @Column(name="cpf" , nullable = false,unique = true)
     private String cpf;
+
+    private boolean votou; // novo atributo
+
+    @OneToMany(mappedBy = "associado")
+    private List<Voto> votos;
 
 }

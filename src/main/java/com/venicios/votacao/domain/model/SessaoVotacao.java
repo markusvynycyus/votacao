@@ -37,6 +37,24 @@ public class SessaoVotacao { // alterando Sessão
     @OneToMany(mappedBy = "sessaoVotacao")
     private List<Voto> votos = new ArrayList<>();
 
+    public void contabilizarVotos() {
+        int votosSim = 0;
+        int votosNao = 0;
+
+        for (Voto voto : votos) {
+            if (voto.getOpcaoVoto().equals(OpcaoVoto.SIM)) {
+                votosSim++;
+            } else {
+                votosNao++;
+            }
+        }
+
+        if (votosSim > votosNao) {
+            resultado = Resultado.SIM;
+        } else {
+            resultado = Resultado.NAO;
+        }
+    }
 
 
 }
