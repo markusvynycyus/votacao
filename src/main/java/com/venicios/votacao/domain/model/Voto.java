@@ -20,7 +20,7 @@ public class Voto {// alerando Voto
     @JoinColumn(name = "associado_id", nullable = false)
     private Associado associado;
 
-        @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OpcaoVoto opcaoVoto;
 
