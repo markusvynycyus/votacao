@@ -44,19 +44,6 @@ public class VotoController {
         return votoModelAssembler.toModel(voto);
 
     }
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public VotoDTO adicionar (@Valid @RequestBody VotoInput votoInput){
-        try {
-            Voto novoVoto = votoInputDisassembler.toDomainObject(votoInput);
 
-            novoVoto = emissaoVotoService.validarVoto(novoVoto);
-
-            return votoModelAssembler.toModel(novoVoto);
-
-        } catch (EntidadeNaoEncontradaException e) {
-            throw new NegocioException(e.getMessage(), e);
-        }
-   }
 
 }
