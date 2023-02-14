@@ -1,13 +1,13 @@
 package com.venicios.votacao.domain.execption;
 
-public class PautaNaoEncontradoException extends EntidadeNaoEncontradaException {
+public class PautaNaoEncontradaException extends EntidadeNaoEncontradaException {
     private static final long serialVersionUID = 1L;
 
-    public PautaNaoEncontradoException(String mensagem) {
+    public PautaNaoEncontradaException(String mensagem) {
         super(mensagem);
     }
 
-    public PautaNaoEncontradoException(Long pautaId) {
+    public PautaNaoEncontradaException(Long pautaId) {
         this(String.format("Não existe um cadastro de Pauta com código %d", pautaId));
     }
 }

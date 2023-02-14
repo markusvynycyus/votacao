@@ -1,7 +1,7 @@
 package com.venicios.votacao.domain.service;
 
 import com.venicios.votacao.domain.execption.EntidadeEmUsoException;
-import com.venicios.votacao.domain.execption.PautaNaoEncontradoException;
+import com.venicios.votacao.domain.execption.PautaNaoEncontradaException;
 import com.venicios.votacao.domain.model.Pauta;
 import com.venicios.votacao.domain.repository.PautaRepository;
 import jakarta.transaction.Transactional;
@@ -31,7 +31,7 @@ public class CadastroPautaService {
             pautaRepository.flush();
 
         } catch (EmptyResultDataAccessException e) {
-            throw new PautaNaoEncontradoException(pautaId);
+            throw new PautaNaoEncontradaException(pautaId);
 
         } catch (DataIntegrityViolationException e) {
             throw new EntidadeEmUsoException(
@@ -42,7 +42,7 @@ public class CadastroPautaService {
 
     public Pauta buscarOuFalhar(Long pautaId) {
         return pautaRepository.findById(pautaId)
-                .orElseThrow(() -> new PautaNaoEncontradoException(pautaId));
+                .orElseThrow(() -> new PautaNaoEncontradaException(pautaId));
     }
 
 }
