@@ -1,6 +1,6 @@
-package com.venicios.votacao.api.assembler;
+package com.venicios.votacao.api.v1.assembler;
 
-import com.venicios.votacao.api.dto.PautaDTO;
+import com.venicios.votacao.api.v1.dto.PautaDTO;
 import com.venicios.votacao.domain.model.Pauta;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

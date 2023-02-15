@@ -1,8 +1,6 @@
-package com.venicios.votacao.api.assembler;
+package com.venicios.votacao.api.v1.assembler;
 
-import com.venicios.votacao.api.dto.input.AssociadoInput;
-import com.venicios.votacao.api.dto.input.VotoInput;
-import com.venicios.votacao.domain.model.Associado;
+import com.venicios.votacao.api.v1.dto.input.VotoInput;
 import com.venicios.votacao.domain.model.Voto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
