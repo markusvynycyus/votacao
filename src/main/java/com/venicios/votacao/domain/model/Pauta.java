@@ -25,6 +25,7 @@ public class Pauta { // alterando Pauta
     @Column(nullable = false)
     private String descricao;
 
+    @Column(nullable = false)
     private LocalDateTime dataCriacao;
 
     @OneToMany(mappedBy = "pauta")
