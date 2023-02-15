@@ -1,14 +1,18 @@
 package com.venicios.votacao;
 
+import com.venicios.votacao.domain.execption.EntidadeEmUsoException;
 import com.venicios.votacao.domain.model.Pauta;
 import com.venicios.votacao.domain.service.CadastroPautaService;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+
 import java.time.LocalDateTime;
 
-import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class CadastroPautaIntegrationTests {
 
@@ -27,5 +31,6 @@ class CadastroPautaIntegrationTests {
 		assertThat(novaPauta).isNotNull();
 		assertThat(novaPauta.getId()).isNotNull();
 	}
+
 
 }
