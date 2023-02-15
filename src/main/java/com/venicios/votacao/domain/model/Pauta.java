@@ -30,4 +30,5 @@ public class Pauta { // alterando Pauta
 
     @OneToMany(mappedBy = "pauta")
     private List<SessaoVotacao> sessaoVotacao;
+
 }
