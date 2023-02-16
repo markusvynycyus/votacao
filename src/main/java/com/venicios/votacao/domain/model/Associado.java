@@ -1,6 +1,5 @@
 package com.venicios.votacao.domain.model;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.apache.http.HttpEntity;
@@ -10,6 +9,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.IOException;
 import java.util.List;

@@ -4,9 +4,10 @@ import com.venicios.votacao.domain.execption.SessaoVotacaoNaoEncontradoException
 import com.venicios.votacao.domain.model.Pauta;
 import com.venicios.votacao.domain.model.SessaoVotacao;
 import com.venicios.votacao.domain.repository.SessaoVotacaoRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 @Service
 public class CadastroSessaoVotacaoService {
