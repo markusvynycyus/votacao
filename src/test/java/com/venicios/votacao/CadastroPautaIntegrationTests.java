@@ -2,7 +2,7 @@ package com.venicios.votacao;
 
 import com.venicios.votacao.domain.model.Pauta;
 import com.venicios.votacao.domain.service.CadastroPautaService;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
