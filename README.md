@@ -9,6 +9,8 @@ O sistema também apresenta algumas funcionalidades interessantes, como a verifi
 Em resumo, o objetivo do projeto é fornecer uma solução simples e prática para a realização de eleições em assembleias ou reuniões virtuais, que pode ser adaptada e aprimorada de acordo com as necessidades de cada caso.</p>  
   
 ## Tecnologias Usadas
+  - [JDK 1.8]
+  - [JDK 1.8]
 <p align="Left">Java 11</p>  
 <p align="Left">Spring Boot</p>  
 ##<p align="Left">PostegreSQL</p>  
