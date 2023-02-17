@@ -9,5 +9,8 @@ O sistema também apresenta algumas funcionalidades interessantes, como a verifi
 Em resumo, o objetivo do projeto é fornecer uma solução simples e prática para a realização de eleições em assembleias ou reuniões virtuais, que pode ser adaptada e aprimorada de acordo com as necessidades de cada caso.</p>  
   
 ## Tecnologias Usadas
-<p align="center">tecnologias</p>  
+<p align="Left">Java 11</p>  
+<p align="Left">Java 11</p>  
+<p align="Left">Java 11</p>  
+
 
