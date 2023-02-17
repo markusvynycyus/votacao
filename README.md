@@ -1,8 +1,5 @@
 # Votação de uma Assembléia.
 <h1 align="center">
-## 📑 Índice- [Sobre](#-sobre)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Como Baixar o Projeto](#-como-baixar-o-projeto)
   
 ## Descrição do Projeto
 <p align="left"> O sistema permite o cadastro de eleitores e candidatos, a criação de uma eleição com uma lista de candidatos, e o registro dos votos dos eleitores.
