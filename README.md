@@ -13,5 +13,12 @@ Em resumo, o objetivo do projeto é fornecer uma solução simples e prática pa
   - Spring Boot :um framework que facilita o desenvolvimento de aplicativos em Java, fornecendo recursos para configuração automática, gerenciamento de dependências e criação de aplicativos web.
   - Maven : uma ferramenta de gerenciamento de projetos em Java que ajuda a automatizar a compilação, o teste e a implantação do aplicativo.
 
+## Principias Classes do Sistema
+   Essas classes representam os objetos principais que o sistema.
+    
+  - Associado: Ela representa um membro da organização que pode participar das votações.
+  - Pauta : representa uma pauta de votação, com um título e uma descrição.
+  - SessaoVotacao: representa uma sessão de votação para uma determinada pauta, com um tempo limite e um estado atual (aberto ou fechado).
+  - Voto: representa um voto dado por um membro para uma determinada pauta, com a opção de voto (SIM ou NÃO) e informações sobre quem deu o voto.
 
 
