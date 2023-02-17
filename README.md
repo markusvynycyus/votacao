@@ -20,5 +20,7 @@ Em resumo, o objetivo do projeto é fornecer uma solução simples e prática pa
   - Pauta : representa uma pauta de votação, com um título e uma descrição.
   - SessaoVotacao: representa uma sessão de votação para uma determinada pauta, com um tempo limite e um estado atual (aberto ou fechado).
   - Voto: representa um voto dado por um membro para uma determinada pauta, com a opção de voto (SIM ou NÃO) e informações sobre quem deu o voto.
+  - OpcaoVoto: é um enum (tipo enumerado) que representa as opções possíveis de voto em uma votação do sistema de votação.
+  - Resultado : Este enum tem três valores possíveis: "SIM", "NAO" e "EMPATE". Ele é utilizado para representar o resultado de uma votação em uma pauta.
 
 
