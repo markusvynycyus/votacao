@@ -10,7 +10,7 @@ Em resumo, o objetivo do projeto é fornecer uma solução simples e prática pa
   
 ## Tecnologias Usadas
 <p align="Left">Java 11</p>  
-<p align="Left">Java 11</p>  
-<p align="Left">Java 11</p>  
+<p align="Left">Spring Boot</p>  
+<p align="Left">PostegreSQLS</p>  
 
 
